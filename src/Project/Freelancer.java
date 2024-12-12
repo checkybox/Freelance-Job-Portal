@@ -2,6 +2,7 @@ package Project;
 
 public class Freelancer
 {
+    // attributes
     private String name;
     private int age;
     private String job;
@@ -13,7 +14,7 @@ public class Freelancer
         this.age = age;
         this.job = job;
     }
-
+    
     public void work()
     {
         System.out.println(this.name + " is working on the project...");
@@ -23,7 +24,7 @@ public class Freelancer
         System.out.println("The work is finished.");
     }
 
-    // get methods
+    // getters
     public String getName()
     {
         return this.name;
@@ -39,7 +40,7 @@ public class Freelancer
         return this.job;
     }
 
-    // set methods
+    // setters
     public void setName(String name)
     {
         this.name = name;

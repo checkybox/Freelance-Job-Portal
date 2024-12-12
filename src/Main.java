@@ -10,5 +10,7 @@ public class Main
         System.out.println(freelancer.getName());
         System.out.println(freelancer.getAge());
         System.out.println(freelancer.getJob());
+
+        freelancer.work();
     }
 }

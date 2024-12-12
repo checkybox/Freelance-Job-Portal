@@ -6,11 +6,21 @@ public class Freelancer
     private int age;
     private String job;
 
+    // constructor
     public Freelancer(String name, int age, String job)
     {
         this.name = name;
         this.age = age;
         this.job = job;
+    }
+
+    public void work()
+    {
+        System.out.println(this.name + " is working on the project...");
+        System.out.println("...");
+        System.out.println("...");
+        System.out.println("...");
+        System.out.println("The work is finished.");
     }
 
     // get methods

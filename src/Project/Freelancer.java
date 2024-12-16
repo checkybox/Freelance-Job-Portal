@@ -14,7 +14,8 @@ public class Freelancer
         this.age = age;
         this.job = job;
     }
-    
+
+    // methods of the class
     public void work()
     {
         System.out.println(this.name + " is working on the project...");
@@ -22,6 +23,18 @@ public class Freelancer
         System.out.println("...");
         System.out.println("...");
         System.out.println("The work is finished.");
+    }
+
+    public void isOlderThan(Freelancer freelancer)
+    {
+        if(this.age > freelancer.getAge())
+        {
+            System.out.println(this.name + " is older than " + freelancer.getName());
+        }
+        else
+        {
+            System.out.println(this.name + " is not older than " + freelancer.getName());
+        }
     }
 
     // getters

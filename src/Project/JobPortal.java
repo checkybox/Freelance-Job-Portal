@@ -21,6 +21,20 @@ public class JobPortal
         this.jobs = jobs;
     }
 
+    public void getJobs()
+    {
+        System.out.println("Available jobs for portal " + this.getName() + ":");
+        for(Job jobs : jobs)
+        {
+            System.out.println(jobs.getName());
+        }
+    }
+
+    public void getInfo()
+    {
+        System.out.println(this.getName() + " : " + this.getOrigin());
+    }
+
     // getters
     public String getName()
     {
@@ -30,20 +44,6 @@ public class JobPortal
     public String getOrigin()
     {
         return this.origin;
-    }
-
-    public String getInfo()
-    {
-        return(this.getName() + " : " + this.getOrigin());
-    }
-
-    public void getJobs()
-    {
-        System.out.println("Available jobs for portal " + this.getName() + ":");
-        for(Job jobs : jobs)
-        {
-            System.out.println(jobs.getName());
-        }
     }
 
     // setters

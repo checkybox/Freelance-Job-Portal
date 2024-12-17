@@ -17,10 +17,10 @@ public class Main
         jobPortals[0] = new JobPortal("HeadHunter", "Russia", jobs);
         jobPortals[1] = new JobPortal("Craigslist", "USA", jobs);
         jobPortals[2] = new JobPortal("Fiverr", "Israel", jobs);
+        jobPortals[0].getJobs();
 
         Freelancer freelancer1 = new Freelancer("John", 27, jobs[1]);
         System.out.println(freelancer1.getJobFull());
         System.out.println();
-        jobPortals[0].getJobs();
     }
 }

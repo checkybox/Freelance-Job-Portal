@@ -5,10 +5,10 @@ public class Freelancer
     // attributes
     private String name;
     private int age;
-    private String job;
+    private Job job;
 
     // constructor
-    public Freelancer(String name, int age, String job)
+    public Freelancer(String name, int age, Job job)
     {
         this.name = name;
         this.age = age;
@@ -50,7 +50,12 @@ public class Freelancer
 
     public String getJob()
     {
-        return this.job;
+        return this.job.getName();
+    }
+
+    public String getJobFull()
+    {
+        return(this.getName() + " is a " + this.getJob());
     }
 
     // setters
@@ -66,6 +71,6 @@ public class Freelancer
 
     public void setJob(String job)
     {
-        this.job = job;
+        this.job.setName(job);
     }
 }

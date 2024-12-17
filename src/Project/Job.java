@@ -3,20 +3,20 @@ package Project;
 public class Job
 {
     // attributes
-    private String jobName;
+    private String name;
     private int minimalWage;
 
     // constructor
-    public Job(String jobName, int minimalWage)
+    public Job(String name, int minimalWage)
     {
-        this.jobName = jobName;
+        this.name = name;
         this.minimalWage = minimalWage;
     }
 
     // getters
-    public String getJobName()
+    public String getName()
     {
-        return this.jobName;
+        return this.name;
     }
 
     public int getMinimalWage()
@@ -25,9 +25,9 @@ public class Job
     }
 
     // setters
-    public void setJobName(String jobName)
+    public void setName(String name)
     {
-        this.jobName = jobName;
+        this.name = name;
     }
 
     public void setMinimalWage(int minimalWage)

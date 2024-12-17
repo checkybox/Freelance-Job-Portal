@@ -3,43 +3,28 @@ package Project;
 public class JobPortal
 {
     // attributes
-    private String jobPortalName;
-    private String description;
+    private String name;
     private String origin;
+    private Job[] jobs;
 
-    // empty constructor
-    public JobPortal(){}
-
-    // constructor with only name property
-    public JobPortal(String jobPortalName)
+    // slim constructor
+    public JobPortal(String name)
     {
-        this.jobPortalName = jobPortalName;
+        this.name = name;
     }
 
-    // constructor without description
-    public JobPortal(String jobPortalName, String origin)
+    // main constructor
+    public JobPortal(String name, String origin)
     {
-        this.jobPortalName = jobPortalName;
+        this.name = name;
         this.origin = origin;
-    }
-
-    // constructor with all properties
-    public JobPortal(String jobPortalName, String description, String origin)
-    {
-        this.jobPortalName = jobPortalName;
-        this.description = description;
-        this.origin = origin;
+        this.jobs = jobs;
     }
 
     // getters
-    public String getJobPortalName()
+    public String getName()
     {
-        return this.jobPortalName;
-    }
-
-    public String getDescription()
-    {
-        return this.description;
+        return this.name;
     }
 
     public String getOrigin()
@@ -47,15 +32,15 @@ public class JobPortal
         return this.origin;
     }
 
-    // setters
-    public void setJobPortalName(String jobPortalName)
+    public String getInfo()
     {
-        this.jobPortalName = jobPortalName;
+        return(this.getName() + " : " + this.getOrigin());
     }
 
-    public void setDescription(String description)
+    // setters
+    public void setName(String name)
     {
-        this.description = description;
+        this.name = name;
     }
 
     public void setOrigin(String origin)

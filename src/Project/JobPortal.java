@@ -14,7 +14,7 @@ public class JobPortal
     }
 
     // main constructor
-    public JobPortal(String name, String origin)
+    public JobPortal(String name, String origin, Job[] jobs)
     {
         this.name = name;
         this.origin = origin;
@@ -35,6 +35,15 @@ public class JobPortal
     public String getInfo()
     {
         return(this.getName() + " : " + this.getOrigin());
+    }
+
+    public void getJobs()
+    {
+        System.out.println("Available jobs for portal " + this.getName() + ":");
+        for(Job jobs : jobs)
+        {
+            System.out.println(jobs.getName());
+        }
     }
 
     // setters

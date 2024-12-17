@@ -14,11 +14,13 @@ public class Main
 
         // create an array of job portals
         JobPortal[] jobPortals = new JobPortal[3];
-        jobPortals[0] = new JobPortal("HeadHunter", "Russia");
-        jobPortals[1] = new JobPortal("Craigslist", "USA");
-        jobPortals[2] = new JobPortal("Fiverr", "Israel");
+        jobPortals[0] = new JobPortal("HeadHunter", "Russia", jobs);
+        jobPortals[1] = new JobPortal("Craigslist", "USA", jobs);
+        jobPortals[2] = new JobPortal("Fiverr", "Israel", jobs);
 
         Freelancer freelancer1 = new Freelancer("John", 27, jobs[1]);
         System.out.println(freelancer1.getJobFull());
+        System.out.println();
+        jobPortals[0].getJobs();
     }
 }

@@ -18,9 +18,17 @@ public class Main
         jobPortals[1] = new JobPortal("Craigslist", "USA", jobs);
         jobPortals[2] = new JobPortal("Fiverr", "Israel", jobs);
         jobPortals[0].getJobs();
+        System.out.println();
 
         Freelancer freelancer1 = new Freelancer("John", 27, jobs[1]);
+        Freelancer freelancer2 = new Freelancer("Gregory", 40, jobs[0]);
+        Freelancer freelancer3 = new Freelancer("Mary", 28, jobs[2]);
         System.out.println(freelancer1.getJobFull());
+        System.out.println(freelancer2.getJobFull());
+        System.out.println(freelancer3.getJobFull());
         System.out.println();
+
+        freelancer1.isOlderThan(freelancer2);
+        freelancer2.isOlderThan(freelancer3);
     }
 }

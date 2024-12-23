@@ -17,7 +17,7 @@ public class Main
         jobPortals[0] = new JobPortal("HeadHunter", "Russia", jobs);
         jobPortals[1] = new JobPortal("Craigslist", "USA", jobs);
         jobPortals[2] = new JobPortal("Fiverr", "Israel", jobs);
-        jobPortals[0].getJobs();
+        jobPortals[0].getAvailableJobs();
         System.out.println();
 
         Freelancer freelancer1 = new Freelancer("John", 27, jobs[1]);

@@ -1,17 +1,28 @@
 package Project;
 
+// upd: done
+
+// class structure
+// first comes constructors (default one is necessary!)
+// the attributes of class
+// then getter and setter methods
+// then other code
+
 public class Job
 {
-    // attributes
-    private String name;
-    private int minimalWage;
+    // default constructor
+    public Job(){}
 
-    // constructor
+    // main constructor
     public Job(String name, int minimalWage)
     {
         this.name = name;
         this.minimalWage = minimalWage;
     }
+
+    // attributes
+    private String name;
+    private int minimalWage;
 
     // getters
     public String getName()

@@ -1,6 +1,6 @@
 package Abstract;
 
-import Project.Outputable;
+import Interface.Outputable;
 
 public abstract class User implements Outputable
 {
@@ -26,7 +26,7 @@ public abstract class User implements Outputable
     public void setName(String name) { this.name = name; }
     public void setAge(int age) { this.age = age; }
 
-    // abstract class methods
+    // abstract methods
     public abstract String getInfo();
     public abstract void getBasicInfo();
     public abstract void getFullInfo();

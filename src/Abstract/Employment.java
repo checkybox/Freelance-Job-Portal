@@ -1,6 +1,8 @@
 package Abstract;
 
-public abstract class Employment
+import Interface.Outputable;
+
+public abstract class Employment implements Outputable
 {
     public Employment(String title, float salary, String location)
     {
@@ -24,6 +26,7 @@ public abstract class Employment
     public void setSalary(float salary) { this.salary = salary; }
     public void setLocation(String location) { this.location = location; }
 
-    // abstract class methods
-
+    // abstract methods
+    public abstract void getBasicInfo();
+    public abstract void getFullInfo();
 }

@@ -28,5 +28,7 @@ public class Main
 
         // calls toString() automatically
         System.out.println(freelancer1);
+        freelancer1.getBasicInfo();
+        freelancer1.getFullInfo();
     }
 }

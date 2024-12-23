@@ -2,16 +2,13 @@ package Project;
 
 public class JobPortal
 {
-    // default constructor
     public JobPortal(){}
 
-    // slim constructor
     public JobPortal(String name)
     {
         this.name = name;
     }
 
-    // main constructor
     public JobPortal(String name, String origin, Job[] jobs)
     {
         this.name = name;

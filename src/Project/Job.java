@@ -1,26 +1,21 @@
 package Project;
 
-// class structure
-// first comes constructors (default one is necessary!)
-// the attributes of class
-// then getter and setter methods
-// then other code
-
-// add classes Object
+/* TODO:
+derive properties from employment superclass
+add jobType parameter (full-time/part-time/freelance/remote)
+ */
 
 public class Job
 {
-    // default constructor
     public Job(){}
 
-    // main constructor
     public Job(String name, int minimalWage)
     {
         this.name = name;
         this.minimalWage = minimalWage;
     }
 
-    // attributes
+    // class attributes
     private String name;
     private int minimalWage;
 

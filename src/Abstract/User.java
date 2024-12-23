@@ -1,6 +1,8 @@
-package Project;
+package Abstract;
 
-public abstract class User
+import Project.Outputable;
+
+public abstract class User implements Outputable
 {
     public User(int id, String name, int age)
     {
@@ -26,11 +28,13 @@ public abstract class User
 
     // abstract class methods
     public abstract String getInfo();
+    public abstract void getBasicInfo();
+    public abstract void getFullInfo();
 
     // overrides
     @Override
     public String toString()
     {
-        return "id = " + id + " | name = " + name + " | age = " + age;
+        return "(id = " + id + " | name = " + name + " | age = " + age + ")";
     }
 }

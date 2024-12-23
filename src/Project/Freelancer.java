@@ -1,10 +1,9 @@
 package Project;
 
-import org.jetbrains.annotations.NotNull;
+import Abstract.User;
 
 public class Freelancer extends User
 {
-    // main constructor
     public Freelancer(int id, String name, int age, Job job)
     {
         super(id, name, age);
@@ -15,13 +14,27 @@ public class Freelancer extends User
     private String favoriteLanguage = "Java";
     private Job job;
 
-    // getters derived from superclass
+    // getters
+    public Job getJob()
+    {
+        return this.job;
+    }
 
-    // setters derived from superclass
+    //
 
     // methods of the class
     public String getInfo()
     {
         return "My favorite language is " + this.favoriteLanguage;
+    }
+
+    public void getBasicInfo()
+    {
+        System.out.println("Basic info placeholder.");
+    }
+
+    public void getFullInfo()
+    {
+        System.out.println("Full info placeholder.");
     }
 }

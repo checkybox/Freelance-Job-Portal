@@ -1,70 +1,27 @@
 package Project;
 
-public class Freelancer
-{
-    // default constructor
-    public Freelancer(){}
+import org.jetbrains.annotations.NotNull;
 
+public class Freelancer extends User
+{
     // main constructor
-    public Freelancer(String name, int age, Job job)
+    public Freelancer(int id, String name, int age, Job job)
     {
-        this.name = name;
-        this.age = age;
+        super(id, name, age);
         this.job = job;
     }
 
     // class attributes
-    private String name;
-    private int age;
+    private String favoriteLanguage = "Java";
     private Job job;
 
-    // getters
-    public String getName()
-    {
-        return this.name;
-    }
+    // getters derived from superclass
 
-    public int getAge()
-    {
-        return this.age;
-    }
-
-    public String getJob()
-    {
-        return this.job.getName();
-    }
-
-    // setters
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public void setAge(int age)
-    {
-        this.age = age;
-    }
-
-    public void setJob(String job)
-    {
-        this.job.setName(job);
-    }
+    // setters derived from superclass
 
     // methods of the class
-    public String getJobFull()
+    public String getInfo()
     {
-        return(this.getName() + " is a " + this.getJob());
-    }
-
-    public void isOlderThan(Freelancer freelancer)
-    {
-        if(this.age > freelancer.getAge())
-        {
-            System.out.println(this.name + " is older than " + freelancer.getName());
-        }
-        else
-        {
-            System.out.println(this.name + " is not older than " + freelancer.getName());
-        }
+        return "My favorite language is " + this.favoriteLanguage;
     }
 }

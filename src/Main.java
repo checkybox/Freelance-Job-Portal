@@ -20,15 +20,13 @@ public class Main
         jobPortals[0].getAvailableJobs();
         System.out.println();
 
-        Freelancer freelancer1 = new Freelancer("John", 27, jobs[1]);
-        Freelancer freelancer2 = new Freelancer("Gregory", 40, jobs[0]);
-        Freelancer freelancer3 = new Freelancer("Mary", 28, jobs[2]);
-        System.out.println(freelancer1.getJobFull());
-        System.out.println(freelancer2.getJobFull());
-        System.out.println(freelancer3.getJobFull());
-        System.out.println();
+        Freelancer freelancer1 = new Freelancer(1, "John", 28, jobs[0]);
+        System.out.println(freelancer1.getInfo());
+        System.out.println(freelancer1.getId());
+        System.out.println(freelancer1.getName());
+        System.out.println(freelancer1.getAge());
 
-        freelancer1.isOlderThan(freelancer2);
-        freelancer2.isOlderThan(freelancer3);
+        // calls toString() automatically
+        System.out.println(freelancer1);
     }
 }

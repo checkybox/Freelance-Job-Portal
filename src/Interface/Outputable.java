@@ -1,4 +1,4 @@
-package Project;
+package Interface;
 
 public interface Outputable
 {

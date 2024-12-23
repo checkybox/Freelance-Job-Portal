@@ -1,12 +1,12 @@
 package Project;
 
-// upd: done
-
 // class structure
 // first comes constructors (default one is necessary!)
 // the attributes of class
 // then getter and setter methods
 // then other code
+
+// add classes Object
 
 public class Job
 {

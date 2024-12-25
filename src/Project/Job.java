@@ -2,42 +2,41 @@ package Project;
 
 /* TODO:
 derive properties from employment superclass
-add jobType parameter (full-time/part-time/freelance/remote)
+add jobType parameter (full-time/part-time/freelance/remote/on-site)
  */
 
-public class Job
-{
-    public Job(){}
+import Abstract.Employment;
 
-    public Job(String name, int minimalWage)
+public class Job extends Employment
+{
+    public Job(String title, float salary, String location, String jobType)
     {
-        this.name = name;
-        this.minimalWage = minimalWage;
+        super(title, salary, location);
+        this.jobType = jobType;
     }
 
     // class attributes
-    private String name;
-    private int minimalWage;
+    private String jobType;
 
-    // getters
-    public String getName()
+    // subclass getters and setters
+    public String getJobType()
     {
-        return this.name;
+        return this.jobType;
     }
 
-    public int getMinimalWage()
+    public void setJobType(String jobType)
     {
-        return this.minimalWage;
+        this.jobType = jobType;
     }
 
-    // setters
-    public void setName(String name)
+    // interface methods implementation
+    public void getBasicInfo()
     {
-        this.name = name;
+        System.out.println("Basic info placeholder.");
     }
 
-    public void setMinimalWage(int minimalWage)
+    public void getFullInfo()
     {
-        this.minimalWage = minimalWage;
+        System.out.println("Full info placeholder.");
     }
 }

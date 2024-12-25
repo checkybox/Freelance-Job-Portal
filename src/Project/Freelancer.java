@@ -14,13 +14,11 @@ public class Freelancer extends User
     private String favoriteLanguage = "Java";
     private Job job;
 
-    // getters
+    // subclass getters and setters
     public Job getJob()
     {
         return this.job;
     }
-
-    //
 
     // methods of the class
     public String getInfo()
@@ -28,6 +26,7 @@ public class Freelancer extends User
         return "My favorite language is " + this.favoriteLanguage;
     }
 
+    // interface methods implementation
     public void getBasicInfo()
     {
         System.out.println("Basic info placeholder.");

@@ -1,5 +1,9 @@
 package Project;
 
+/*
+TODO: overhaul class structure accounting for Job.java changes
+ */
+
 public class JobPortal
 {
     public JobPortal(){}
@@ -49,7 +53,7 @@ public class JobPortal
         System.out.println("Available jobs for portal " + this.getName() + ":");
         for(Job jobs : jobs)
         {
-            System.out.println(jobs.getName());
+            System.out.println(jobs.getTitle());
         }
     }
 

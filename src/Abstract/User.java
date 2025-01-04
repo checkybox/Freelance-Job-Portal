@@ -1,6 +1,8 @@
 package Abstract;
 
 import Interface.Outputable;
+import Project.Freelancer;
+import Project.Job;
 
 public abstract class User implements Outputable
 {
@@ -27,7 +29,6 @@ public abstract class User implements Outputable
     public void setAge(int age) { this.age = age; }
 
     // abstract methods
-    public abstract String getInfo();
     public abstract void getBasicInfo();
     public abstract void getFullInfo();
 
@@ -35,6 +36,8 @@ public abstract class User implements Outputable
     @Override
     public String toString()
     {
-        return "(id = " + id + " | name = " + name + " | age = " + age + ")";
+        return "ID : " + id
+                + "\nName : " + name
+                + "\nAge : " + age + "\n";
     }
 }

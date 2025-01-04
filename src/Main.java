@@ -1,3 +1,4 @@
+import Abstract.User;
 import Project.Job;
 import Project.Freelancer;
 import Project.JobPortal;
@@ -7,31 +8,28 @@ public class Main
 {
     public static void main(String[] args)
     {
-        // create an array of jobs
-//        Job[] jobs = new Job[3];
-//        jobs[0] = new Job("Software Engineer", 120000);
-//        jobs[1] = new Job("Data Scientist", 105000);
-//        jobs[2] = new Job("DevOps Engineer", 125000);
+        Job net_eng = new Job("Network Engineer", 120000, "New York", Job.jobTypes.on_site);
+        Job dev_ops = new Job("DevOps", 135000, "Amsterdam", Job.jobTypes.remote);
 
-        // create an array of job portals
-//        JobPortal[] jobPortals = new JobPortal[3];
-//        jobPortals[0] = new JobPortal("HeadHunter", "Russia", jobs);
-//        jobPortals[1] = new JobPortal("Craigslist", "USA", jobs);
-//        jobPortals[2] = new JobPortal("Fiverr", "Israel", jobs);
-//        jobPortals[0].getAvailableJobs();
-//        System.out.println();
+        Freelancer john = new Freelancer(0, "John", 28, 4, net_eng);
 
-//        Freelancer freelancer1 = new Freelancer(1, "John", 28, jobs[0]);
-//        System.out.println(freelancer1.getInfo());
-//        System.out.println(freelancer1.getId());
-//        System.out.println(freelancer1.getName());
-//        System.out.println(freelancer1.getAge());
+        // test getters
+        System.out.println(net_eng.getTitle());
+        System.out.println(net_eng.getSalary());
+        System.out.println(net_eng.getLocation());
+        System.out.println(net_eng.getJobType());
+        net_eng.getBasicInfo();
+        net_eng.getFullInfo();
+        System.out.println();
 
-        // calls toString() automatically
-//        System.out.println(freelancer1);
-//        freelancer1.getBasicInfo();
-//        freelancer1.getFullInfo();
+        // call toString
+        System.out.println(net_eng);
+        System.out.println(dev_ops);
 
+        System.out.println(john);
 
+        User user = new Freelancer(20, "Josh", 28, 5, new Job());
+        System.out.println(user);
+        user.getFullInfo();
     }
 }

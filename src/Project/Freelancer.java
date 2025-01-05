@@ -2,25 +2,27 @@ package Project;
 
 import Abstract.User;
 
-import java.sql.SQLOutput;
+// Needs some more overrides here and there
 
 public class Freelancer extends User
 {
-    public Freelancer(int id, String name, int age, int workExperience, Job job)
+    public Freelancer(String name, int age, int experience, Job job)
     {
-        super(id, name, age);
-        this.workExperience = workExperience;
+        super(id++, name, age);
+        this.experience = experience;
         this.job = job;
     }
 
     // class attributes
-    private int workExperience;
+    private static int id = 0;
+    private int experience;
     private Job job;
 
     // subclass getters and setters
     public Job getJob() { return this.job; }
-
-    public void setJob() { this.job = job; }
+    public int getExperience() { return this.experience; }
+    public void setJob(Job job) { this.job = job; }
+    public void setExperience(int experience) { this.experience = experience; }
 
     // interface methods implementation
     public void getBasicInfo()
@@ -30,8 +32,21 @@ public class Freelancer extends User
 
     public void getFullInfo()
     {
+        System.out.println("Outputting full info for freelancer " + this.getName() + ":");
         System.out.println(toString());
+    }
 
-        // System.out.println("Full info placeholder.");
+    @Override
+    public String toString()
+    {
+        if (job == null)
+        {
+            return super.toString() + "Experience : " + experience;
+        }
+        else
+        {
+            return super.toString() + "Experience : " + experience
+                    + "\nJob : " + job.getTitle();
+        }
     }
 }

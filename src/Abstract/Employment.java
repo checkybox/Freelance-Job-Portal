@@ -1,29 +1,35 @@
 package Abstract;
 
+// Need to override equals() and other things
+
 import Interface.Outputable;
 
 public abstract class Employment implements Outputable
 {
     public Employment() {}
 
-    public Employment(String title, int salary, String location)
+    public Employment(int id, String title, int salary, String location)
     {
+        this.id = id;
         this.title = title;
         this.salary = salary;
         this.location = location;
     }
 
     // class attributes
+    private int id;
     private String title;
     private int salary;
     private String location;
 
     // getters
+    public int getId() { return id; }
     public String getTitle() { return title; }
     public int getSalary() { return salary; }
     public String getLocation() { return location; }
 
     // setters
+    public void setId(int id) { this.id = id; }
     public void setTitle(String title) { this.title = title; }
     public void setSalary(int salary) { this.salary = salary; }
     public void setLocation(String location) { this.location = location; }
@@ -31,4 +37,11 @@ public abstract class Employment implements Outputable
     // abstract methods
     public abstract void getBasicInfo();
     public abstract void getFullInfo();
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        // TODO
+        return (this == obj);
+    }
 }

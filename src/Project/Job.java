@@ -1,5 +1,7 @@
 package Project;
 
+// Need to implement abstract methods
+
 import Abstract.Employment;
 
 public class Job extends Employment
@@ -8,7 +10,7 @@ public class Job extends Employment
 
     public Job(String title, int salary, String location, jobTypes jobType)
     {
-        super(title, salary, location);
+        super(id++, title, salary, location);
         this.jobType = jobType;
     }
 
@@ -31,6 +33,7 @@ public class Job extends Employment
         }
     }
 
+    private static int id = 0;
     private jobTypes jobType;
 
     // subclass getters and setters
@@ -55,5 +58,21 @@ public class Job extends Employment
                 + "\nSalary : " + this.getSalary()
                 + "\nLocation : " + this.getLocation()
                 + "\nJob Type : " + this.jobType + "\n";
+    }
+
+    // only jobs with the same title are equal
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Job job = (Job) obj;
+        return jobType == ((Job) obj).getJobType();
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return (getTitle() == null ? 0 : getTitle().hashCode());
     }
 }

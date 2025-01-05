@@ -1,8 +1,8 @@
 package Abstract;
 
+// Mostly finished
+
 import Interface.Outputable;
-import Project.Freelancer;
-import Project.Job;
 
 public abstract class User implements Outputable
 {

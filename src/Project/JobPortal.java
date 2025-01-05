@@ -1,8 +1,6 @@
 package Project;
 
-/*
-TODO: overhaul class structure accounting for Job.java changes
- */
+// TODO: full class overhaul
 
 public class JobPortal
 {

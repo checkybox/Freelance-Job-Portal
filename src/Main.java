@@ -17,6 +17,7 @@ public class Main
         admin.addUser(freelancers, "Rick");
         admin.addUser(freelancers, "Morty");
         admin.addJob(jobs, "Sleepyhead");
+
         admin.removeJob(jobs, -1);
         admin.removeUser(freelancers, -1);
 
@@ -27,12 +28,8 @@ public class Main
         // output available freelancers
         Freelancer.printAvailableFreelancers(freelancers);
 
-        /* warning: this method sorts the jobs array
-        it may impact the result of equals() method
-        therefore it's better to leave it commented */
-
         // output jobs ordered by salary
-        // Job.printJobsBySalary(jobs);
+        Job.printJobsBySalary(jobs);
 
         System.out.println(jobs.get(1).equals(jobs.get(3)));
         System.out.println(freelancers.get(1).equals(freelancers.get(3)));

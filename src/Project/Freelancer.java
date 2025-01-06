@@ -35,12 +35,6 @@ public class Freelancer extends User implements JobAction
         }
     }
 
-    // interface methods implementation
-    public void printBasicInfo()
-    {
-        System.out.println("Basic info placeholder.");
-    }
-
     public void printFullInfo()
     {
         System.out.println("Outputting full info for freelancer " + this.getName() + ":");

@@ -38,8 +38,8 @@ public abstract class Employment implements Outputable
     public void setLocation(String location) { this.location = location; }
 
     // abstract methods
-    public abstract void getBasicInfo();
-    public abstract void getFullInfo();
+    public abstract void printBasicInfo();
+    public abstract void printFullInfo();
 
     @Override
     public String toString()

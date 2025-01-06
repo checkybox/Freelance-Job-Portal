@@ -16,7 +16,7 @@ public class Main
         Job.printAvailableJobs(jobs);
 
         // output available freelancers
-        Freelancer.getAvailableFreelancers(freelancers);
+        Freelancer.printAvailableFreelancers(freelancers);
 
         // output jobs ordered by salary
         System.out.println("Jobs ordered by salary:");

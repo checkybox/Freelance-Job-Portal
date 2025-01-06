@@ -30,8 +30,8 @@ public abstract class User implements Outputable
     public void setAge(int age) { this.age = age; }
 
     // abstract methods
-    public abstract void getBasicInfo();
-    public abstract void getFullInfo();
+    public abstract void printBasicInfo();
+    public abstract void printFullInfo();
 
     // overrides
     @Override

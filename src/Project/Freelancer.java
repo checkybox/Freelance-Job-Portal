@@ -24,7 +24,7 @@ public class Freelancer extends User
     public void setJob(Job job) { this.job = job; }
     public void setExperience(int experience) { this.experience = experience; }
 
-    public static void getAvailableFreelancers(ArrayList<Freelancer> freelancers)
+    public static void printAvailableFreelancers(ArrayList<Freelancer> freelancers)
     {
         System.out.println("Available freelancers:");
         for(Freelancer freelancer : freelancers)
@@ -35,12 +35,12 @@ public class Freelancer extends User
     }
 
     // interface methods implementation
-    public void getBasicInfo()
+    public void printBasicInfo()
     {
         System.out.println("Basic info placeholder.");
     }
 
-    public void getFullInfo()
+    public void printFullInfo()
     {
         System.out.println("Outputting full info for freelancer " + this.getName() + ":");
         System.out.println(this);

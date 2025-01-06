@@ -42,12 +42,12 @@ public class Job extends Employment
     }
 
     // interface methods implementation
-    public void getBasicInfo()
+    public void printBasicInfo()
     {
         System.out.println("Basic info placeholder.");
     }
 
-    public void getFullInfo()
+    public void printFullInfo()
     {
         System.out.println("Full info placeholder.");
     }

@@ -21,16 +21,10 @@ public class Job extends Employment
 
         private final String friendlyName;
 
-        jobTypes(String friendlyName)
-        {
-            this.friendlyName = friendlyName;
-        }
+        jobTypes(String friendlyName) { this.friendlyName = friendlyName; }
 
         @Override
-        public String toString()
-        {
-            return this.friendlyName;
-        }
+        public String toString() { return this.friendlyName; }
     }
 
     private jobTypes jobType;
@@ -53,10 +47,7 @@ public class Job extends Employment
     @Override
     public String toString()
     {
-        return "Title : " + this.getTitle()
-                + "\nSalary : " + this.getSalary()
-                + "\nLocation : " + this.getLocation()
-                + "\nJob Type : " + this.jobType + "\n";
+        return super.toString() + "\nJob Type : " + this.jobType + "\n";
     }
 
     // only jobs with the same title are equal

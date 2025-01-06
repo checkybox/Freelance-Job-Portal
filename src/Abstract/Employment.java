@@ -42,12 +42,10 @@ public abstract class Employment implements Outputable
     public abstract void getFullInfo();
 
     @Override
-    public boolean equals(Object obj)
+    public String toString()
     {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Employment employment = (Employment) obj;
-        // equals() used for proper string comparison
-        return title == ((Employment) obj).title;
+        return "Title : " + this.getTitle()
+                + "\nSalary : " + this.getSalary()
+                + "\nLocation : " + this.getLocation();
     }
 }

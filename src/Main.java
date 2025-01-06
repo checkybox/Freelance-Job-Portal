@@ -25,9 +25,6 @@ public class Main
         {
             System.out.println(job);
         }
-
-        System.out.println(freelancers.get(0).getId());
-        System.out.println(freelancers.get(1).getId());
     }
 
     private static ArrayList<Job> initializeJobs()
@@ -51,6 +48,7 @@ public class Main
     private static ArrayList<JobPortal> initializeJobPortals()
     {
         ArrayList<JobPortal> jobPortals = new ArrayList<>();
+
         return jobPortals;
     }
 }

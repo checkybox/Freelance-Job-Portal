@@ -36,6 +36,7 @@ public class Freelancer extends User
         System.out.println("Outputting full info for freelancer " + this.getName() + ":");
         System.out.println(this);
     }
+
     @Override
     public String toString()
     {
@@ -48,5 +49,11 @@ public class Freelancer extends User
             return super.toString() + "Experience : " + experience
                     + "\nJob : " + job.getTitle();
         }
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        return false;
     }
 }

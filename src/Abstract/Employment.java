@@ -4,6 +4,8 @@ package Abstract;
 
 import Interface.Outputable;
 
+import java.util.Objects;
+
 public abstract class Employment implements Outputable
 {
     public Employment() {}
@@ -41,7 +43,9 @@ public abstract class Employment implements Outputable
     @Override
     public boolean equals(Object obj)
     {
-        // TODO
-        return (this == obj);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Employment employment = (Employment) obj;
+        return Objects.equals(title, employment.title);
     }
 }

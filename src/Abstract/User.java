@@ -1,11 +1,13 @@
 package Abstract;
 
-// Mostly finished
+// done
 
 import Interface.Outputable;
 
 public abstract class User implements Outputable
 {
+    public User() {}
+
     public User(int id, String name, int age)
     {
         this.id = id;

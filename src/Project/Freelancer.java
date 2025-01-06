@@ -6,6 +6,8 @@ import Abstract.User;
 
 public class Freelancer extends User
 {
+    public Freelancer() {}
+
     public Freelancer(String name, int age, int experience, Job job)
     {
         super(id++, name, age);
@@ -33,9 +35,8 @@ public class Freelancer extends User
     public void getFullInfo()
     {
         System.out.println("Outputting full info for freelancer " + this.getName() + ":");
-        System.out.println(toString());
+        System.out.println(this);
     }
-
     @Override
     public String toString()
     {

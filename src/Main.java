@@ -2,7 +2,6 @@ import Project.Job;
 import Project.Freelancer;
 import Project.JobPortal;
 import java.util.ArrayList;
-import java.util.List;
 
 // Add array of freelancers and job portals
 
@@ -10,31 +9,14 @@ public class Main
 {
     public static void main(String[] args)
     {
+        // initialize arrays of class instances
         ArrayList<Job> jobs = initializeJobs();
-        Freelancer john = new Freelancer("John", 28, 4, jobs.get(0));
+        ArrayList<Freelancer> freelancers = initializeFreelancers();
+        ArrayList<JobPortal> jobPortals = initializeJobPortals();
 
+        freelancers.get(0).setJob(jobs.get(0));
         System.out.println(jobs.get(0).getId());
         System.out.println(jobs.get(1).getId());
-
-        // test getters
-//        System.out.println(jobs.get(0).getTitle());
-//        System.out.println(jobs.get(0).getSalary());
-//        System.out.println(jobs.get(0).getLocation());
-//        System.out.println(jobs.get(0).getJobType());
-//        jobs.get(0).getBasicInfo();
-//        jobs.get(0).getFullInfo();
-//        System.out.println();
-
-        Freelancer f1 = new Freelancer("Josh", 28, 5, new Job());
-        System.out.println(f1);
-        f1.getFullInfo();
-
-//        hashing algorithm works!!!!!
-//        System.out.println(net_eng.hashCode());
-//        System.out.println(net_eng);
-//        net_eng.setSalary(149990);
-//        net_eng.setTitle("Network ROBBER");
-//        System.out.println(net_eng.hashCode());
 
         // output available jobs
         System.out.println();
@@ -44,7 +26,8 @@ public class Main
             System.out.println(job);
         }
 
-        john.getFullInfo();
+        freelancers.getFirst().getFullInfo();
+        freelancers.get(1).getFullInfo();
     }
 
     private static ArrayList<Job> initializeJobs()
@@ -52,6 +35,22 @@ public class Main
         ArrayList<Job> jobs = new ArrayList<>();
         jobs.add(new Job("Network Engineer", 120000, "New York", Job.jobTypes.on_site));
         jobs.add(new Job("DevOps", 135000, "Amsterdam", Job.jobTypes.remote));
+
         return jobs;
+    }
+
+    private static ArrayList<Freelancer> initializeFreelancers()
+    {
+        ArrayList<Freelancer> freelancers = new ArrayList<>();
+        freelancers.add(new Freelancer("Josh", 28, 5, new Job()));
+        freelancers.add(new Freelancer("Alibek", 30, 7, new Job()));
+
+        return freelancers;
+    }
+
+    private static ArrayList<JobPortal> initializeJobPortals()
+    {
+        ArrayList<JobPortal> jobPortals = new ArrayList<>();
+        return jobPortals;
     }
 }

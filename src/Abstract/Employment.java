@@ -10,15 +10,16 @@ public abstract class Employment implements Outputable
 {
     public Employment() {}
 
-    public Employment(int id, String title, int salary, String location)
+    public Employment(String title, int salary, String location)
     {
-        this.id = id;
+        this.id = idCounter++;
         this.title = title;
         this.salary = salary;
         this.location = location;
     }
 
     // class attributes
+    private static int idCounter = 0;
     private int id;
     private String title;
     private int salary;
@@ -46,6 +47,7 @@ public abstract class Employment implements Outputable
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Employment employment = (Employment) obj;
-        return Objects.equals(title, employment.title);
+        // equals() used for proper string comparison
+        return title == ((Employment) obj).title;
     }
 }

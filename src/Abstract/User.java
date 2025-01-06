@@ -8,14 +8,15 @@ public abstract class User implements Outputable
 {
     public User() {}
 
-    public User(int id, String name, int age)
+    public User(String name, int age)
     {
-        this.id = id;
+        this.id = idCounter++;
         this.name = name;
         this.age = age;
     }
 
     // class attributes
+    private static int idCounter = 0;
     private int id;
     private String name;
     private int age;

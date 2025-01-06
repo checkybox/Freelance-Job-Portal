@@ -10,13 +10,12 @@ public class Freelancer extends User
 
     public Freelancer(String name, int age, int experience, Job job)
     {
-        super(id++, name, age);
+        super(name, age);
         this.experience = experience;
         this.job = job;
     }
 
-    // class attributes
-    private static int id = 0;
+    // subclass attributes
     private int experience;
     private Job job;
 

@@ -26,8 +26,8 @@ public class Main
             System.out.println(job);
         }
 
-        freelancers.getFirst().getFullInfo();
-        freelancers.get(1).getFullInfo();
+        System.out.println(freelancers.get(0).getId());
+        System.out.println(freelancers.get(1).getId());
     }
 
     private static ArrayList<Job> initializeJobs()

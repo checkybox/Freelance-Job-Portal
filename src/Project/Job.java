@@ -10,7 +10,7 @@ public class Job extends Employment
 
     public Job(String title, int salary, String location, jobTypes jobType)
     {
-        super(id++, title, salary, location);
+        super(title, salary, location);
         this.jobType = jobType;
     }
 
@@ -33,7 +33,6 @@ public class Job extends Employment
         }
     }
 
-    private static int id = 0;
     private jobTypes jobType;
 
     // subclass getters and setters

@@ -1,12 +1,6 @@
 package Abstract;
 
-// Need to override equals() and other things
-
-import Interface.Outputable;
-
-import java.util.Objects;
-
-public abstract class Employment implements Outputable
+public abstract class Employment
 {
     public Employment() {}
 
@@ -36,10 +30,6 @@ public abstract class Employment implements Outputable
     public void setTitle(String title) { this.title = title; }
     public void setSalary(int salary) { this.salary = salary; }
     public void setLocation(String location) { this.location = location; }
-
-    // abstract methods
-    public abstract void printBasicInfo();
-    public abstract void printFullInfo();
 
     @Override
     public String toString()

@@ -1,7 +1,7 @@
 package Project;
 
-import java.util.ArrayList;
 import Abstract.Employment;
+import java.util.ArrayList;
 
 public class Job extends Employment
 {
@@ -41,6 +41,30 @@ public class Job extends Employment
         }
     }
 
+    // print jobs sorted by salary (descending)
+    // be careful, it changes the original array
+    public static void printJobsBySalary(ArrayList<Job> jobs)
+    {
+        System.out.println("Jobs ordered by salary:");
+        for (int i = 0; i < jobs.size() - 1; i++)
+        {
+            for (int j = 0; j < jobs.size() - i - 1; j++)
+            {
+                if (jobs.get(j).getSalary() < jobs.get(j + 1).getSalary())
+                {
+                    Job temp = jobs.get(j);
+                    jobs.set(j, jobs.get(j + 1));
+                    jobs.set(j + 1, temp);
+                }
+            }
+        }
+        for(Job job : jobs)
+        {
+            System.out.println(job);
+            System.out.println();
+        }
+    }
+
     // interface methods implementation
     public void printBasicInfo()
     {
@@ -49,7 +73,8 @@ public class Job extends Employment
 
     public void printFullInfo()
     {
-        System.out.println("Full info placeholder.");
+        System.out.println("Outputting full info for job " + this.getTitle() + ":");
+        System.out.println(this);
     }
 
     @Override
@@ -65,14 +90,14 @@ public class Job extends Employment
         }
     }
 
-    // only jobs with the same title are equal
+    // equal if they have the same title
     @Override
     public boolean equals(Object obj)
     {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Job job = (Job) obj;
-        return jobType.equals(job.jobType);
+        return getTitle().equals(job.getTitle());
     }
 
     @Override

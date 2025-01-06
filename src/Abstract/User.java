@@ -1,8 +1,6 @@
 package Abstract;
 
-import Interface.Outputable;
-
-public abstract class User implements Outputable
+public abstract class User
 {
     public User() {}
 
@@ -29,16 +27,11 @@ public abstract class User implements Outputable
     public void setName(String name) { this.name = name; }
     public void setAge(int age) { this.age = age; }
 
-    // abstract methods
-    public abstract void printBasicInfo();
-    public abstract void printFullInfo();
-
-    // overrides
     @Override
     public String toString()
     {
-        return "ID : " + id
-                + "\nName : " + name
-                + "\nAge : " + age + " years\n";
+        return "ID : " + this.getId()
+                + "\nName : " + this.getName()
+                + "\nAge : " + this.getAge() + " years\n";
     }
 }

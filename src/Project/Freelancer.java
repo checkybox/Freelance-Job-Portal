@@ -1,9 +1,10 @@
 package Project;
 
-import java.util.ArrayList;
 import Abstract.User;
+import Interfaces.JobAction;
+import java.util.ArrayList;
 
-public class Freelancer extends User
+public class Freelancer extends User implements JobAction
 {
     public Freelancer() {}
 
@@ -60,6 +61,7 @@ public class Freelancer extends User
         }
     }
 
+    // equal if they have the same job and experience
     @Override
     public boolean equals(Object obj)
     {
@@ -74,5 +76,13 @@ public class Freelancer extends User
     public int hashCode()
     {
         return (getName() == null ? 0 : getName().hashCode());
+    }
+
+    @Override
+    public void applyForJob(Job job)
+    {
+        System.out.println("Applying for job " + job.getTitle() + ".");
+        this.setJob(job);
+        System.out.println("Successfully applied for job " + job.getTitle() + ".");
     }
 }

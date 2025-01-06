@@ -1,5 +1,6 @@
-import Project.Job;
+import Project.Admin;
 import Project.Freelancer;
+import Project.Job;
 import Project.JobPortal;
 import java.util.ArrayList;
 
@@ -12,31 +13,30 @@ public class Main
         ArrayList<Freelancer> freelancers = initializeFreelancers();
         ArrayList<JobPortal> jobPortals = initializeJobPortals();
 
+        Admin checkybox = new Admin("checkybox", "password");
+        checkybox.addUser(freelancers, "Rick");
+        checkybox.addUser(freelancers, "Morty");
+
         // output available jobs
         Job.printAvailableJobs(jobs);
 
         // output available freelancers
         Freelancer.printAvailableFreelancers(freelancers);
 
+        /* warning: this method sorts the jobs array
+        it may impact the result of equals() method
+        therefore it's better to leave it commented */
         // output jobs ordered by salary
-        System.out.println("Jobs ordered by salary:");
-        for (int i = 0; i < jobs.size() - 1; i++)
-        {
-            for (int j = 0; j < jobs.size() - i - 1; j++)
-            {
-                if (jobs.get(j).getSalary() < jobs.get(j + 1).getSalary())
-                {
-                    Job temp = jobs.get(j);
-                    jobs.set(j, jobs.get(j + 1));
-                    jobs.set(j + 1, temp);
-                }
-            }
-        }
-        for(Job job : jobs)
-        {
-            System.out.println(job);
-            System.out.println();
-        }
+        // Job.printJobsBySalary(jobs);
+
+        System.out.println(jobs.get(1).equals(jobs.get(3)));
+        System.out.println(freelancers.get(1).equals(freelancers.get(3)));
+        System.out.println(freelancers.get(1).equals(freelancers.get(2)));
+
+        freelancers.get(1).printFullInfo();
+        jobs.get(1).printFullInfo();
+        System.out.println();
+        System.out.println(jobs.get(1));
     }
 
     private static ArrayList<Job> initializeJobs()
@@ -45,6 +45,7 @@ public class Main
         jobs.add(new Job("Network Engineer", 120000, "New York"));
         jobs.add(new Job("DevOps", 135000, "Amsterdam"));
         jobs.add(new Job("Software Engineer", 150000, "San Francisco"));
+        jobs.add(new Job("DevOps", 130000, "Berlin"));
 
         return jobs;
     }
@@ -56,6 +57,7 @@ public class Main
         freelancers.add(new Freelancer("Josh", 28, 5, jobs.get(0)));
         freelancers.add(new Freelancer("Alibek", 30, 7, jobs.get(1)));
         freelancers.add(new Freelancer("Ross", 25, 3, jobs.get(2)));
+        freelancers.add(new Freelancer("John", 35, 7, jobs.get(1)));
 
         return freelancers;
     }

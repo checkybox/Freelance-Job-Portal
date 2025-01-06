@@ -1,7 +1,5 @@
 package Abstract;
 
-// done
-
 import Interface.Outputable;
 
 public abstract class User implements Outputable
@@ -41,6 +39,6 @@ public abstract class User implements Outputable
     {
         return "ID : " + id
                 + "\nName : " + name
-                + "\nAge : " + age + "\n";
+                + "\nAge : " + age + " years\n";
     }
 }

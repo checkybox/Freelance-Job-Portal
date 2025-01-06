@@ -1,8 +1,7 @@
 package Project;
 
+import java.util.ArrayList;
 import Abstract.User;
-
-// Needs some more overrides here and there
 
 public class Freelancer extends User
 {
@@ -25,6 +24,16 @@ public class Freelancer extends User
     public void setJob(Job job) { this.job = job; }
     public void setExperience(int experience) { this.experience = experience; }
 
+    public static void getAvailableFreelancers(ArrayList<Freelancer> freelancers)
+    {
+        System.out.println("Available freelancers:");
+        for(Freelancer freelancer : freelancers)
+        {
+            System.out.println(freelancer);
+            System.out.println();
+        }
+    }
+
     // interface methods implementation
     public void getBasicInfo()
     {
@@ -42,18 +51,28 @@ public class Freelancer extends User
     {
         if (job == null)
         {
-            return super.toString() + "Experience : " + experience;
+            return super.toString() + "Experience : " + experience + " years";
         }
         else
         {
             return super.toString() + "Experience : " + experience
-                    + "\nJob : " + job.getTitle();
+                    + " years\nJob : " + job.getTitle();
         }
     }
 
     @Override
     public boolean equals(Object obj)
     {
-        return false;
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Freelancer freelancer = (Freelancer) obj;
+        if (experience != freelancer.experience) return false;
+        return job.equals(freelancer.job);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return (getName() == null ? 0 : getName().hashCode());
     }
 }

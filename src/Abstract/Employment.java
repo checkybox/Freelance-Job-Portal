@@ -34,7 +34,8 @@ public abstract class Employment
     @Override
     public String toString()
     {
-        return "Title : " + this.getTitle()
+        return "ID : " + this.getId()
+                + "\nTitle : " + this.getTitle()
                 + "\nSalary : " + this.getSalary()
                 + "\nLocation : " + this.getLocation();
     }

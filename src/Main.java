@@ -13,9 +13,13 @@ public class Main
         ArrayList<Freelancer> freelancers = initializeFreelancers();
         ArrayList<JobPortal> jobPortals = initializeJobPortals();
 
-        Admin checkybox = new Admin("checkybox", "password");
-        checkybox.addUser(freelancers, "Rick");
-        checkybox.addUser(freelancers, "Morty");
+        Admin admin = new Admin("checkybox", "password");
+        admin.addUser(freelancers, "Rick");
+        admin.addUser(freelancers, "Morty");
+        admin.addJob(jobs, "Sleepyhead");
+        admin.removeJob(jobs, -1);
+        admin.removeUser(freelancers, -1);
+
 
         // output available jobs
         Job.printAvailableJobs(jobs);
@@ -26,6 +30,7 @@ public class Main
         /* warning: this method sorts the jobs array
         it may impact the result of equals() method
         therefore it's better to leave it commented */
+
         // output jobs ordered by salary
         // Job.printJobsBySalary(jobs);
 

@@ -4,6 +4,12 @@ public abstract class User
 {
     public User() {}
 
+    public User(String username)
+    {
+        this.id = idCounter++;
+        this.name = username;
+    }
+
     public User(String name, int age)
     {
         this.id = idCounter++;

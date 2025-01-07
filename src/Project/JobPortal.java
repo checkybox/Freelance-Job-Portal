@@ -1,6 +1,5 @@
 package Project;
 
-// TODO: full class overhaul
 import java.util.ArrayList;
 
 public class JobPortal
@@ -31,17 +30,26 @@ public class JobPortal
     // getters
     public String getName() { return this.name; }
     public String getOrigin() { return this.origin; }
+    public ArrayList<Job> getJobs() { return this.jobs; }
 
     // setters
     public void setName(String name) { this.name = name; }
     public void setOrigin(String origin) { this.origin = origin; }
+    public void setJobs(ArrayList<Job> jobs) { this.jobs = jobs; }
 
     public void listJobs()
     {
-        System.out.println("Available jobs for portal " + this.getName() + ":");
-        for(Job jobs : jobs)
+        if (this.jobs == null)
         {
-            System.out.println(jobs.getTitle());
+            System.out.println("No jobs available for portal " + this.getName());
+            return;
+        }
+
+        System.out.println("Available jobs for portal " + this.getName() + ":");
+        for(Job job : jobs)
+        {
+            System.out.println(job);
+            System.out.println();
         }
     }
 }

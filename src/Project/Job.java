@@ -25,6 +25,7 @@ public class Job extends Employment
         public String toString() { return this.friendlyName; }
     }
 
+    // subclass attributes
     private jobTypes jobType;
 
     // subclass getters and setters
@@ -41,8 +42,6 @@ public class Job extends Employment
         }
     }
 
-    // print jobs sorted by salary (descending)
-    // be careful, it changes the original array
     public static void printJobsBySalary(ArrayList<Job> jobs)
     {
         System.out.println("Jobs ordered by salary:");
@@ -63,6 +62,32 @@ public class Job extends Employment
             System.out.println(job);
             System.out.println();
         }
+    }
+
+    public static ArrayList<Job> searchJobsBySalary(ArrayList<Job> jobs, int minSalary)
+    {
+        ArrayList<Job> foundJobs = new ArrayList<>();
+        for(Job job : jobs)
+        {
+            if (job.getSalary() >= minSalary)
+            {
+                foundJobs.add(job);
+            }
+        }
+        return foundJobs;
+    }
+
+    public static ArrayList<Job> searchJobsByLocation(ArrayList<Job> jobs, String location)
+    {
+        ArrayList<Job> foundJobs = new ArrayList<>();
+        for(Job job : jobs)
+        {
+            if (job.getLocation().equals(location))
+            {
+                foundJobs.add(job);
+            }
+        }
+        return foundJobs;
     }
 
     public void printFullInfo()

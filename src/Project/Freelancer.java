@@ -75,7 +75,7 @@ public class Freelancer extends User implements JobAction
     @Override
     public void applyForJob(Job job)
     {
-        System.out.println("Applying for job " + job.getTitle() + ".");
+        System.out.println(this.getName() + ": Applying for job " + job.getTitle() + ".");
         this.setJob(job);
         System.out.println("Successfully applied for job " + job.getTitle() + ".");
     }

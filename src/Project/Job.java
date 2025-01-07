@@ -32,9 +32,8 @@ public class Job extends Employment
     public jobTypes getJobType() { return this.jobType; }
     public void setJobType(jobTypes jobType) { this.jobType = jobType; }
 
-    public static void printAvailableJobs(ArrayList<Job> jobs)
+    public static void printJobs(ArrayList<Job> jobs)
     {
-        System.out.println("Available jobs:");
         for(Job job : jobs)
         {
             System.out.println(job);

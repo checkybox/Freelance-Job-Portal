@@ -23,17 +23,19 @@ public class Main
         admin.removeUser(freelancers, -1);
 
         // output available jobs
-        Job.printAvailableJobs(jobs);
+        System.out.println("Available jobs:");
+        Job.printJobs(jobs);
 
         // output available freelancers
         Freelancer.printAvailableFreelancers(freelancers);
 
-        // output jobs ordered by salary
-        // (order of jobs in the array will change)
-        Job.printJobsBySalary(jobs);
-
-        // output available jobs again
-        Job.printAvailableJobs(jobs);
+//        // output jobs ordered by salary
+//        // (order of jobs in the array will change)
+//        Job.printJobsBySalary(jobs);
+//
+//        // output available jobs again
+//        System.out.println("Available jobs:");
+//        Job.printJobs(jobs);
 
         System.out.println(jobs.get(1).equals(jobs.get(3)));
         System.out.println(freelancers.get(1).equals(freelancers.get(3)));
@@ -51,19 +53,13 @@ public class Main
 
         ArrayList<Job> filteredJobs = Job.searchJobsBySalary(jobs, 140000);
         System.out.println("Jobs with salary >= 140000:");
-        for (Job job : filteredJobs)
-        {
-            System.out.println(job);
-            System.out.println();
-        }
+        Job.printJobs(filteredJobs);
 
         ArrayList<Job> filteredJobs2 = Job.searchJobsByLocation(jobs, "Amsterdam");
         System.out.println("Jobs in Amsterdam:");
-        for (Job job : filteredJobs2)
-        {
-            System.out.println(job);
-            System.out.println();
-        }
+        Job.printJobs(filteredJobs2);
+
+        freelancers.get(4).applyForJob(jobs.get(1));
     }
 
     private static ArrayList<Job> initializeJobs()
@@ -73,6 +69,7 @@ public class Main
         jobs.add(new Job("DevOps", 135000, "Amsterdam"));
         jobs.add(new Job("Software Engineer", 150000, "San Francisco"));
         jobs.add(new Job("DevOps", 130000, "Berlin"));
+        jobs.add(new Job("Software Engineer", 140000, "Amsterdam"));
 
         return jobs;
     }

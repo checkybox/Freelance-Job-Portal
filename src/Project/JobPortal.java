@@ -1,63 +1,55 @@
 package Project;
 
+import java.util.ArrayList;
+
 public class JobPortal
 {
-    // default constructor
     public JobPortal(){}
 
-    // slim constructor
     public JobPortal(String name)
     {
+        this.id = idCounter++;
         this.name = name;
     }
 
-    // main constructor
-    public JobPortal(String name, String origin, Job[] jobs)
+    public JobPortal(String name, String origin, ArrayList<Job> jobs)
     {
+        this.id = idCounter++;
         this.name = name;
         this.origin = origin;
         this.jobs = jobs;
     }
 
     // class attributes
+    private static int idCounter = 0;
+    private int id;
     private String name;
     private String origin;
-    private Job[] jobs;
+    private ArrayList<Job> jobs;
 
     // getters
-    public String getName()
-    {
-        return this.name;
-    }
-
-    public String getOrigin()
-    {
-        return this.origin;
-    }
+    public String getName() { return this.name; }
+    public String getOrigin() { return this.origin; }
+    public ArrayList<Job> getJobs() { return this.jobs; }
 
     // setters
-    public void setName(String name)
-    {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
+    public void setOrigin(String origin) { this.origin = origin; }
+    public void setJobs(ArrayList<Job> jobs) { this.jobs = jobs; }
 
-    public void setOrigin(String origin)
+    public void listJobs()
     {
-        this.origin = origin;
-    }
-
-    // other class methods
-    public void getAvailableJobs()
-    {
-        System.out.println("Available jobs for portal " + this.getName() + ":");
-        for(Job jobs : jobs)
+        if (this.jobs == null)
         {
-            System.out.println(jobs.getName());
+            System.out.println("No jobs available for portal " + this.getName());
+            return;
         }
-    }
 
-    public void getInfo()
-    {
-        System.out.println(this.getName() + " : " + this.getOrigin());
+        System.out.println("Available jobs for portal " + this.getName() + ":");
+        for(Job job : jobs)
+        {
+            System.out.println(job);
+            System.out.println();
+        }
     }
 }

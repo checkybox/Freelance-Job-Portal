@@ -1,70 +1,82 @@
 package Project;
 
-public class Freelancer
-{
-    // default constructor
-    public Freelancer(){}
+import Abstract.User;
+import Interfaces.JobAction;
+import java.util.ArrayList;
 
-    // main constructor
-    public Freelancer(String name, int age, Job job)
+public class Freelancer extends User implements JobAction
+{
+    public Freelancer() {}
+
+    public Freelancer(String name, int age, int experience, Job job)
     {
-        this.name = name;
-        this.age = age;
+        super(name, age);
+        this.experience = experience;
         this.job = job;
     }
 
-    // class attributes
-    private String name;
-    private int age;
+    // subclass attributes
+    private int experience;
     private Job job;
 
-    // getters
-    public String getName()
-    {
-        return this.name;
-    }
+    // subclass getters and setters
+    public Job getJob() { return this.job; }
+    public int getExperience() { return this.experience; }
+    public void setJob(Job job) { this.job = job; }
+    public void setExperience(int experience) { this.experience = experience; }
 
-    public int getAge()
+    public static void printAvailableFreelancers(ArrayList<Freelancer> freelancers)
     {
-        return this.age;
-    }
-
-    public String getJob()
-    {
-        return this.job.getName();
-    }
-
-    // setters
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public void setAge(int age)
-    {
-        this.age = age;
-    }
-
-    public void setJob(String job)
-    {
-        this.job.setName(job);
-    }
-
-    // methods of the class
-    public String getJobFull()
-    {
-        return(this.getName() + " is a " + this.getJob());
-    }
-
-    public void isOlderThan(Freelancer freelancer)
-    {
-        if(this.age > freelancer.getAge())
+        System.out.println("Available freelancers:");
+        for(Freelancer freelancer : freelancers)
         {
-            System.out.println(this.name + " is older than " + freelancer.getName());
+            System.out.println(freelancer);
+            System.out.println();
+        }
+    }
+
+    public void printFullInfo()
+    {
+        System.out.println("Outputting full info for freelancer " + this.getName() + ":");
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString()
+    {
+        if (job == null)
+        {
+            return super.toString() + "Experience : " + experience + " years";
         }
         else
         {
-            System.out.println(this.name + " is not older than " + freelancer.getName());
+            return super.toString() + "Experience : " + experience
+                    + " years\nJob : " + job.getTitle();
         }
+    }
+
+    // equal if they have the same job and experience
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Freelancer freelancer = (Freelancer) obj;
+        if (experience != freelancer.experience) return false;
+        return job.equals(freelancer.job);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return (getName() == null ? 0 : getName().hashCode());
+    }
+
+    @Override
+    public void applyForJob(Job job)
+    {
+        System.out.println(this.getName() + ": Applying for job " + job.getTitle() + ".");
+        this.setJob(job);
+        System.out.println("Successfully applied for job " + job.getTitle() + ".");
     }
 }
